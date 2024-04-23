@@ -5,8 +5,10 @@
 // Execute `rustlings hint intro2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
+///Write-up
+/// La macro appellé n'éxiste pas (Printline!) j'ai donc remplacé par (Println!)
 
 fn main() {
-    printline!("Hello there!")
+    println!("Hello there!")
 }
