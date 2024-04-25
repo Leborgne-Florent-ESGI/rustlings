@@ -2,17 +2,19 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+///Write-Up
+///Identifier attend un i32 cependant le cas "gopher" retourne un float
+///C'est également le cas dans le else, il renvoie un &str au lieu d'un i32
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        4
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW

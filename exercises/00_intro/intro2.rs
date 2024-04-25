@@ -7,8 +7,7 @@
 
 
 ///Write-up
-/// La macro appellé n'éxiste pas (Printline!) j'ai donc remplacé par (Println!)
-
+///La macro appellé n'éxiste pas (Printline!) j'ai donc remplacé par (Println!)
 fn main() {
     println!("Hello there!")
 }

@@ -8,10 +8,13 @@
 // Execute `rustlings hint modules3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 // TODO: Complete this use statement
-use ???
+
+///Write-Up
+///Similaire à l'import de python, il faut utiliser "use" pour appeler des structure/méthodes externe.
+///On peut en importer plusieurs en utilisant {a, b}
+
+use std::time::{UNIX_EPOCH, SystemTime};
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {

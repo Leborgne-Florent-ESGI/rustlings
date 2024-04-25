@@ -6,14 +6,17 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+///Write-Up
+///Les génériques permettent de prendre n'importe quelle type en valeur
+///Pour corriger ce programme, il faut remplacé toutes les déclarations de type dans la structure et dans le trait
+///par un type générique exemple: <T>
 
-struct Wrapper {
-    value: u32,
+struct Wrapper<T> {
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+impl<T> Wrapper<T> {
+    pub fn new(value: T) -> Self {
         Wrapper { value }
     }
 }

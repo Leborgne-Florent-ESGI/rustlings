@@ -10,11 +10,14 @@
 // Execute `rustlings hint using_as` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+///Write_Up
+///La fonction "average" divise un f64 et un usize.
+///Pour coriger l'erreur, il faut convertir le usize fourni par values.len() en f64
+///le trait Div de f64 necessite le meme type
 
 fn average(values: &[f64]) -> f64 {
     let total = values.iter().sum::<f64>();
-    total / values.len()
+    total / values.len() as f64
 }
 
 fn main() {

@@ -9,7 +9,10 @@
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+///Write-Up
+///1.Déclarer une fonction d'erreur utilisant l'enum ParseInt
+///2.Retirer l'unwrap du str(x) dans la fonction parse_pos_nonzero (Unwrap effectue deja un match)
+///3.Declarer un match qui renvoie le nombre lors du parsing si il echoue, ca retourne un Result avec l'enum ParseInt
 
 use std::num::ParseIntError;
 
@@ -25,13 +28,18 @@ impl ParsePosNonzeroError {
         ParsePosNonzeroError::Creation(err)
     }
     // TODO: add another error conversion function here.
-    // fn from_parseint...
+    fn from_parseint(err: ParseIntError) -> ParsePosNonzeroError{
+        ParsePosNonzeroError::ParseInt(err)
+    }
 }
 
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
     // TODO: change this to return an appropriate error instead of panicking
     // when `parse()` returns an error.
-    let x: i64 = s.parse().unwrap();
+    let x: i64 = match s.parse(){
+        Ok(e)=> e,
+        Err(e)=> return Err(ParsePosNonzeroError::ParseInt(e))
+    };
     PositiveNonzeroInteger::new(x).map_err(ParsePosNonzeroError::from_creation)
 }
 

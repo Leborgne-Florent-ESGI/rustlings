@@ -5,11 +5,14 @@
 // Execute `rustlings hint lifetimes3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+///Write-Up
+///Il faut déclarer un lifetime sur la structure car la structure n'est pas sauvegardé dans la Heap
+///Donc a la fin de l'instance, le pointeur sur la stack est supprimée
+///On aurait pu utiliser un type de chaine de caractère qui est déclarée dans la heap au lieu d'un &str
 
-struct Book {
-    author: &str,
-    title: &str,
+struct Book<'a> {
+    author: &'a str,
+    title: &'a str,
 }
 
 fn main() {

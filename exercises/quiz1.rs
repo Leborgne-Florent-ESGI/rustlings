@@ -13,11 +13,19 @@
 //
 // No hints this time ;)
 
-// I AM NOT DONE
+///Write-Up
+///De part les tests, la fonction renvoie le u32 envoyé en argument que si celui-ci est supérieur à 40
+///Sinon il renvoie l'argument sans le toucher.
 
 // Put your function here!
-// fn calculate_price_of_apples {
-
+fn calculate_price_of_apples(a: u32) -> u32 {
+    if a > 40{
+        a
+    }
+    else {
+        a * 2
+    }
+}
 // Don't modify this function!
 #[test]
 fn verify_test() {

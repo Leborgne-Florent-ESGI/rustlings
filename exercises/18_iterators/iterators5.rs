@@ -11,11 +11,27 @@
 // Execute `rustlings hint iterators5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+///Write-Up
+///
+///L'itération permet le parcours de tout les élements d'un itérable (exemple: list, hashmap, Vec)
+///
+///Dans la fonction count_iterator je retourne: map.values().filter(|&val| val == &value).count()
+///map est un hashmap contenant des clés et des valeurs.
+///".values" permet de retourner chaque valeur du hashmap.
+///ensuite j'utilise ".filter" pour itérer et je compte seulement si la valeur est égale à "&value".
+///
+///
+///Dans la fonction count_collection_iterator je retourne: collection.iter().map(|x| count_iterator(x, value)).sum()
+///Collection est un vecteur contenant des hashmaps
+///.iter me permet d'itérer sur chaque élément de collection
+///.map me permet d'effectuer des actions sur chaqu'un de ces élements
+///Pour chaque élément je vais donc demander le nombre d'occurence de "value"
+///Une fois l'itération terminé, j'ajoute tout les résultats obtenus avec .sum()
 
 use std::collections::HashMap;
+use std::num::ParseIntError;
 
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
 enum Progress {
     None,
     Some,
@@ -35,7 +51,7 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map is a hashmap with String keys and Progress values.
     // map = { "variables1": Complete, "from_str": None, ... }
-    todo!();
+    map.values().filter(|&val| val == &value).count()
 }
 
 fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
@@ -54,7 +70,7 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
     // collection is a slice of hashmaps.
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
-    todo!();
+    collection.iter().map(|x| count_iterator(x, value)).sum()
 }
 
 #[cfg(test)]
